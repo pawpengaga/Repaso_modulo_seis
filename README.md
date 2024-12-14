@@ -14,6 +14,15 @@ Repaso hecho para poder explicar bien todo el flujo de trabajo con JPA
 - Hacer un archivo de logs
 - Crear un Readme
 
+## Flujo de usuario del proyecto HITO 1
+
+1. El usuario llega al index
+2. Aprieta el botón de [CREAR LIBRO]
+3. Llena el formulario
+4. Es redirigido al index para ver los libros creados
+5. Hace clic en el nombre del libro
+6. Se le muestra un modal con los detalles de libro
+
 ## Estructura general del proyecto
 
 ![flujo_general](pictures/flujo-programa.png)
