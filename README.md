@@ -2,6 +2,11 @@
 
 Repaso hecho para poder explicar bien todo el flujo de trabajo con JPA
 
+## Hitos del proyecto
+
+1. Crear toda la estructura funcional para controlador de Libro `<- VAMOS AQUI`
+2. Implementar los usuarios y los arriendos
+
 ## Pasos del proyecto
 
 - Crear el repositorio GIT (No Github)
