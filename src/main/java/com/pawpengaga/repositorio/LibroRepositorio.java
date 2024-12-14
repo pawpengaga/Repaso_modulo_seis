@@ -11,6 +11,7 @@ import com.pawpengaga.modelo.Libro;
 @Repository
 public interface LibroRepositorio extends JpaRepository<Libro, Long> {
 
+  // Consulta personalizada aplicada a método JPA pre existente
   @Query(value = "SELECT * FROM libro ORDER BY id DESC", nativeQuery = true)
   List<Libro> findAll();
 

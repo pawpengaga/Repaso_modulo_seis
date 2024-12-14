@@ -4,7 +4,7 @@ Repaso hecho para poder explicar bien todo el flujo de trabajo con JPA
 
 ## Hitos del proyecto
 
-1. Crear toda la estructura funcional para controlador de Libro `<- VAMOS AQUI`
+1. Crear toda la estructura funcional para controlador de Libro `¡COMPLETADO!`
 2. Implementar los usuarios y los arriendos
 
 ## Pasos del proyecto
@@ -39,7 +39,7 @@ Nombre de la base de datos usada
 CREATE DATABASE db_libreria_repaso;
 ```
 
-## Curiosidades
+## Observaciones
 
 Las cosas que nos ahorra `@Autowired`
 
@@ -52,18 +52,6 @@ public SaleRepository(JdbcTemplate jdbc){
   this.jdbc = jdbc;
 }
 ```
-
-## Pendientes
-
-- La sobre escritura de metodos por `ApplicationController` da error
-- No es posible obtener los archivos CSS y JS desde `/static`
-- Dificultad al momento de mandar las alertas y al mismo tiempo servir la lista de libros
-
-## Investigar
-
-- Que hace `.table-group-divider` para Bootstrap
-
-## Observaciones
 
 ### Sobre las rutas:
 
@@ -83,10 +71,22 @@ Mientras que los que trabajan con *archivos estáticos* no lo llevan
 return "libros/form"; // Esto lleva a Repaso_modulo_seis\src\main\resources\templates\libros\form.html
 ```
 
-## PENDIENTES
+## Pendientes
 
-- Hacer que funcione el modal
+- La sobre escritura de metodos por `ApplicationController` da error
+- No es posible obtener los archivos CSS y JS desde `/static`
+- Dificultad al momento de mandar las alertas y al mismo tiempo servir la lista de libros debido a se usan vistas separadas y no modales para el formulario
+- Hacer que funcione el modal o reemplazarlo por una vista detalle separada
+- Confirmar si la siguiente línea de código es correcta o existen alternativas mejores
+```java
+@Query(value = "SELECT * FROM libro ORDER BY id DESC", nativeQuery = true)
+List<Libro> findAll();
+```
 
-O
+## Investigar
 
-- Reemplazar modal de detalle por vista detalle
+- Que hace `.table-group-divider` para Bootstrap
+
+<br>
+
+> ✨ アイ-カツ! アイ-カツ! ✨
