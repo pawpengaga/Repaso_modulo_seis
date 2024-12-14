@@ -29,3 +29,17 @@ Nombre de la base de datos usada
 ```sql
 CREATE DATABASE db_libreria_repaso;
 ```
+
+## Curiosidades
+
+Las cosas que nos ahorra `@Autowired`
+
+```java
+// Crea el objeto `JdbcTemplate` como constante...
+private final JdbcTemplate jdbc;
+
+// Asignarlo al constructor de manera manual...
+public SaleRepository(JdbcTemplate jdbc){
+  this.jdbc = jdbc;
+}
+```
