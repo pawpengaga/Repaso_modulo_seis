@@ -57,3 +57,7 @@ public SaleRepository(JdbcTemplate jdbc){
 
 - La sobre escritura de metodos por `ApplicationController` da error
 - No es posible obtener los archivos CSS y JS desde `/static`
+
+## Investigar
+
+- Que hace `.table-group-divider` para Bootstrap

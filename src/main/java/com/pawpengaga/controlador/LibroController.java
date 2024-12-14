@@ -14,7 +14,7 @@ import com.pawpengaga.modelo.Libro;
 import com.pawpengaga.servicio.LibroServicio;
 
 @Controller
-@RequestMapping("/libros")
+@RequestMapping("/libros") // SE REFIERE AL ENDOPOINT
 public class LibroController {
 
   @Autowired
@@ -26,18 +26,18 @@ public class LibroController {
   public String index(Model model){
     List<Libro> libros = libroService.getAllLibros();
     model.addAttribute("libros", libros);
-    return "libros/index";
+    return "libros/index"; // SE REFIERE A UN ARCHIVO FISICO
   }
 
-  @GetMapping("/nuevo")
+  @GetMapping("/nuevo") // SE REFIERE AL ENDOPOINT
   public String form(Model model){
-    return "libros/form";
+    return "libros/form"; // SE REFIERE A UN ARCHIVO FISICO
   }
 
-  @PostMapping("/nuevo")
+  @PostMapping("/nuevo") // SE REFIERE AL ENDOPOINT
   public String grabaLibro(@ModelAttribute Libro libro, Model model){
     libroService.grabarLibro(libro);
-    return "redirect:/libros/index";
+    return "redirect:/libros/index"; // SE REFIERE A UN ARCHIVO FISICO
   }
 
 }
