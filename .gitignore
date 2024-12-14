@@ -4,6 +4,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+# ARCHIVOS/CARPETAS QUE VAMOS A OMITIR
+/logs
+
 ### STS ###
 .apt_generated
 .classpath

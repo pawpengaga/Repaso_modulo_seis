@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+ 
+<!-- Nivel de logging por defecto -->
+<root level="INFO">
+<appender-ref ref="CONSOLE" />
+<appender-ref ref="FILE" />
+</root>
+ 
+<!-- Logging para Spring JDBC -->
+<logger name="org.springframework.jdbc.core" level="DEBUG">
+<appender-ref ref="FILE" />
+</logger>
+ 
+    <!-- Consola -->
+<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+<encoder>
+<pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n</pattern>
+</encoder>
+</appender>
+ 
+<!-- Archivo de logs -->
+<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+<file>logs/app.log</file>
+<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+<!-- Archivo de log rotará diariamente -->
+<fileNamePattern>logs/app.%d{yyyy-MM-dd}.log</fileNamePattern>
+<maxHistory>30</maxHistory> <!-- Mantén 30 días de logs -->
+</rollingPolicy>
+<encoder>
+<pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n</pattern>
+</encoder>
+</appender>
+</configuration>
