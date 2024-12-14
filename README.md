@@ -82,3 +82,11 @@ Mientras que los que trabajan con *archivos estáticos* no lo llevan
 ```java
 return "libros/form"; // Esto lleva a Repaso_modulo_seis\src\main\resources\templates\libros\form.html
 ```
+
+## PENDIENTES
+
+- Hacer que funcione el modal
+
+O
+
+- Reemplazar modal de detalle por vista detalle

@@ -15,26 +15,53 @@
 
       <a th:href="@{libros/nuevo}" class="my-5">Nuevo libro</a>
 
-      <table class="table table-striped mt-5">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Titulo</th>
-            <th>Descripcion</th>
-            <th>ISBN</th>
-          </tr>
-        </thead>
-        <tbody class="table-group-divider">
-          <tr th:each="libro : ${libros}">
-            <td th:text="${libro.id}">NO PRESENTA</td>
-            <td th:text="${libro.titulo}">NO PRESENTA</td>
-            <td th:text="${libro.descripcion}">NO PRESENTA</td>
-            <td th:text="${libro.isbn}">NO PRESENTA</td>
-          </tr>
-        </tbody>
-      </table>
+      <div style="max-height: 600px; overflow-y: scroll;">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Titulo</th>
+              <th>Descripcion</th>
+              <th>ISBN</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+            <tbody class="table-group-divider">
+              <tr th:each="libro : ${libros}">
+                <td th:text="${libro.id}">NO PRESENTA</td>
+                <td><a th:text="${libro.titulo}" th:attr="data-bs-target='#modalDetalle'">NO PRESENTA</a></td>
+                <td th:text="${libro.descripcion}">NO PRESENTA</td>
+                <td th:text="${libro.isbn}">NO PRESENTA</td>
+                <td>
+                  <button class="btn btn-light" onclick="showModal()" th:data-item="${libro}" type="button">Ver detalle</button>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
 
     </section>
+
+    <!-- MODAL -->
+
+    <div class="modal fade" id="modalDetallea" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p th:text="${libro.titulo}"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- TOMAR PRESTADO NO ME IMPORTA -->
@@ -47,5 +74,12 @@
   <!-- SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../static/js/app.js"></script>
+
+  <script>
+    function showModal(){
+      const myModalAlternative = new bootstrap.Modal('#modalDetallea', options)
+      return myModalAlternative
+    }
+  </script>
 </body>
 </html>
