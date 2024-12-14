@@ -57,7 +57,28 @@ public SaleRepository(JdbcTemplate jdbc){
 
 - La sobre escritura de metodos por `ApplicationController` da error
 - No es posible obtener los archivos CSS y JS desde `/static`
+- Dificultad al momento de mandar las alertas y al mismo tiempo servir la lista de libros
 
 ## Investigar
 
 - Que hace `.table-group-divider` para Bootstrap
+
+## Observaciones
+
+### Sobre las rutas:
+
+Al trabajar con las rutas de *endpoint*, creadas por medio de `@GetMapping`, `@PostMapping`, `@RequestMapping` se utiliza "/" al inicio de las rutas
+
+#### Por ejemplo
+
+```html
+<form th:action="@{/libros/nuevo}">
+```
+
+Mientras que los que trabajan con *archivos estáticos* no lo llevan
+
+#### Por ejemplo
+
+```java
+return "libros/form"; // Esto lleva a Repaso_modulo_seis\src\main\resources\templates\libros\form.html
+```
