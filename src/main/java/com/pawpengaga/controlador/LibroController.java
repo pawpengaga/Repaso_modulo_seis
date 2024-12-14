@@ -15,7 +15,7 @@ import com.pawpengaga.servicio.LibroServicio;
 
 @Controller
 @RequestMapping("/libros")
-public class LibroController extends ApplicationController {
+public class LibroController {
 
   @Autowired
   LibroServicio libroService;

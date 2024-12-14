@@ -52,3 +52,8 @@ public SaleRepository(JdbcTemplate jdbc){
   this.jdbc = jdbc;
 }
 ```
+
+## Pendientes
+
+- La sobre escritura de metodos por `ApplicationController` da error
+- No es posible obtener los archivos CSS y JS desde `/static`
