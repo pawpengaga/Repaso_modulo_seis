@@ -29,11 +29,11 @@
             <tbody class="table-group-divider">
               <tr th:each="libro : ${libros}">
                 <td th:text="${libro.id}">NO PRESENTA</td>
-                <td><a th:text="${libro.titulo}" th:attr="data-bs-target='#modalDetalle'">NO PRESENTA</a></td>
+                <td><a th:text="${libro.titulo}" th:attr="data-bs-target='#modalDetallea'" data-toggle="modal" th:href="@{#}" onclick="showModal()">NO PRESENTA</a></td>
                 <td th:text="${libro.descripcion}">NO PRESENTA</td>
                 <td th:text="${libro.isbn}">NO PRESENTA</td>
                 <td>
-                  <button class="btn btn-light" onclick="showModal()" th:data-item="${libro}" type="button">Ver detalle</button>
+                  <button class="btn btn-light" data-toggle="modal" th:attr="data-bs-target='#modalDetallea'" th:data-item="${libro}" type="button" onclick="showModal()">Ver detalle</button>
                 </td>
               </tr>
             </tbody>
@@ -44,7 +44,7 @@
 
     <!-- MODAL -->
 
-    <div class="modal fade" id="modalDetallea" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalDetallea" tabindex="-1" aria-labelledby="modalDetallea" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -52,7 +52,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p th:text="${libro.titulo}"></p>
+            <!-- <p th:text="${libro.titulo}"></p> -->
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -76,8 +76,10 @@
   <script src="../static/js/app.js"></script>
 
   <script>
+    // console.log("ESTO FUNCIONAAAAAAAAAAAAAAAAAAAAAAAA")
     function showModal(){
-      const myModalAlternative = new bootstrap.Modal('#modalDetallea', options)
+      const myModalAlternative = new bootstrap.Modal('#modalDetallea')
+      console.log("El onclick funciona...")
       return myModalAlternative
     }
   </script>

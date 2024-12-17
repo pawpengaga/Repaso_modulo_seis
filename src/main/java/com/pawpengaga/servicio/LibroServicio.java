@@ -19,9 +19,10 @@ public class LibroServicio {
   /**
    * Metodo usado por POST
    */
-  public void grabarLibro(Libro libro){
-    libroRepo.save(libro);
+  public Libro grabarLibro(Libro libro){
+    Libro savedLibro = libroRepo.save(libro);
     System.out.println("LIBRO GUARDADO EN BASE DE DATOS");
+    return savedLibro;
   }
 
   /**
@@ -35,7 +36,7 @@ public class LibroServicio {
    * Metodo usado por GET
    */
   public List<Libro> getAllLibros(){
-    return libroRepo.findAll();
+    return libroRepo.findAllByIdDesc();
   }
 
 

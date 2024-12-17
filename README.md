@@ -76,7 +76,7 @@ return "libros/form"; // Esto lleva a Repaso_modulo_seis\src\main\resources\temp
 - La sobre escritura de metodos por `ApplicationController` da error
   - **R:** Los conceptos de Rails no son aplicables a Springboot
 - No es posible obtener los archivos CSS y JS desde `/static`
-  - **R:** Se usa la notación de Thymelaf `th:href="{@/css/style.css}"`
+  - **R:** Se usa la notación de Thymelaf `th:href="@{/css/style.css}"`
 - Dificultad al momento de mandar las alertas y al mismo tiempo servir la lista de libros debido a se usan vistas separadas y no modales para el formulario
   - **R:** Se utilizan `ModelAndView` en el método GET y un retorno `String` en el método del SERVICIO para hacer comprobaciones en el controlador. Ver carpeta `/pictures`
 - Hacer que funcione el modal o reemplazarlo por una vista detalle separada
